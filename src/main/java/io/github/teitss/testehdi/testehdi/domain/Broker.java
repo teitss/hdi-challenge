@@ -2,6 +2,7 @@ package io.github.teitss.testehdi.testehdi.broker;
 
 import java.util.Calendar;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -11,9 +12,8 @@ public class Broker {
 
     private String name;
     private String document;
-    private Integer code;
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private Calendar createDate;
+    private String code;
+    private String createDate;
     
     public String getName() {
         return name;
@@ -27,16 +27,16 @@ public class Broker {
     public void setDocument(String document) {
         this.document = document;
     }
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
-    public Calendar getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
-    public void setCreateDate(Calendar createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
     @Override
