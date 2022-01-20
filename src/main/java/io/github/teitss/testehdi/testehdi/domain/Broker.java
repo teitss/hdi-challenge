@@ -1,11 +1,6 @@
 package io.github.teitss.testehdi.testehdi.domain;
 
-import java.util.Calendar;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Broker {

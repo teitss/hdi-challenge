@@ -17,17 +17,13 @@ public class BrokerStatusController {
 
     private WebClient webClient;
     private static final String BASE_URL = "https://607732991ed0ae0017d6a9b0.mockapi.io/insurance/v1";
-    private static final String TYPE = "application/json";
 
     public BrokerStatusController() {
         this.webClient = WebClient.builder()
         .baseUrl(BASE_URL)
-        .defaultHeader(HttpHeaders.CONTENT_TYPE, TYPE)
         .build();
     }
 
-    //Would be great to implement a cache to prevent a DoS attack.
-    //TODO Refactor with async code
     @GetMapping("/status/{document}")
     ResponseEntity get(@PathVariable String document) {
 
