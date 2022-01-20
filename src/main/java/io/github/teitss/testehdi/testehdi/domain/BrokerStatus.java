@@ -3,9 +3,6 @@ package io.github.teitss.testehdi.testehdi.domain;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-import io.github.teitss.testehdi.testehdi.broker.Broker;
-import io.github.teitss.testehdi.testehdi.brokerdata.BrokerData;
-
 public class BrokerStatus {
 
     @JsonUnwrapped
