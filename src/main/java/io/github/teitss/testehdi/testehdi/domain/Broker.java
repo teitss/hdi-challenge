@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.broker;
+package io.github.teitss.testehdi.testehdi.domain;
 
 import java.util.Calendar;
 

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import io.github.teitss.testehdi.testehdi.broker.Broker;
-import io.github.teitss.testehdi.testehdi.brokerdata.BrokerData;
+import io.github.teitss.testehdi.testehdi.domain.Broker;
+import io.github.teitss.testehdi.testehdi.domain.BrokerData;
 import io.github.teitss.testehdi.testehdi.domain.BrokerStatus;
 
 @RestController
@@ -18,6 +18,7 @@ public class BrokerStatusController {
     //TODO Refactor with async code
     @GetMapping("/status/{document}")
     ResponseEntity get(@PathVariable String document) {
+        
         WebClient brokerClient = WebClient.create("https://607732991ed0ae0017d6a9b0.mockapi.io/insurance/v1/broker/" + document);
         Broker broker = brokerClient.get().retrieve().bodyToMono(Broker.class).block();
         WebClient brokerDataClient = WebClient.create("https://607732991ed0ae0017d6a9b0.mockapi.io/insurance/v1/brokerData/" + broker.getCode());

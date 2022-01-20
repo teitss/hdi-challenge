@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.brokerdata;
+package io.github.teitss.testehdi.testehdi.domain;
 
 public class BrokerData {
     

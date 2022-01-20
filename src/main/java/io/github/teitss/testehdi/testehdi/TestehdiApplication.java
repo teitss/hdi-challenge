@@ -9,7 +9,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-import io.github.teitss.testehdi.testehdi.broker.Broker;
+import io.github.teitss.testehdi.testehdi.domain.Broker;
 
 @SpringBootApplication
 public class TestehdiApplication {
