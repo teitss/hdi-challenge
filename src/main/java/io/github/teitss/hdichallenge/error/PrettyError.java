@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.error;
+package io.github.teitss.hdichallenge.error;
 
 import org.springframework.http.HttpStatus;
 

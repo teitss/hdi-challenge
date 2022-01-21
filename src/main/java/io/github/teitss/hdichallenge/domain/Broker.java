@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.domain;
+package io.github.teitss.hdichallenge.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

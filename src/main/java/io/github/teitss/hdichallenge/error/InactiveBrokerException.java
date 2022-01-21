@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.error;
+package io.github.teitss.hdichallenge.error;
 
 public class InactiveBrokerException extends RuntimeException {
 

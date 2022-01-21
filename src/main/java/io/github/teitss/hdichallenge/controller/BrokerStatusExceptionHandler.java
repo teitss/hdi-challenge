@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.controller;
+package io.github.teitss.hdichallenge.controller;
 
 import org.springframework.core.codec.DecodingException;
 import org.springframework.http.HttpStatus;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import io.github.teitss.testehdi.testehdi.error.InactiveBrokerException;
-import io.github.teitss.testehdi.testehdi.error.PrettyError;
+import io.github.teitss.hdichallenge.error.InactiveBrokerException;
+import io.github.teitss.hdichallenge.error.PrettyError;
 
 
 @ControllerAdvice(assignableTypes = BrokerStatusController.class)

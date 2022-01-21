@@ -1,4 +1,4 @@
-package io.github.teitss.testehdi.testehdi.controller;
+package io.github.teitss.hdichallenge.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import io.github.teitss.testehdi.testehdi.domain.ActiveDTO;
-import io.github.teitss.testehdi.testehdi.domain.Broker;
-import io.github.teitss.testehdi.testehdi.domain.BrokerData;
-import io.github.teitss.testehdi.testehdi.domain.BrokerStatus;
-import io.github.teitss.testehdi.testehdi.error.InactiveBrokerException;
+import io.github.teitss.hdichallenge.domain.ActiveDTO;
+import io.github.teitss.hdichallenge.domain.Broker;
+import io.github.teitss.hdichallenge.domain.BrokerData;
+import io.github.teitss.hdichallenge.domain.BrokerStatus;
+import io.github.teitss.hdichallenge.error.InactiveBrokerException;
 import reactor.core.publisher.Mono;
 
 @RestController
