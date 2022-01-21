@@ -1,16 +1,22 @@
 package io.github.teitss.testehdi.testehdi.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import io.github.teitss.testehdi.testehdi.domain.ActiveDTO;
 import io.github.teitss.testehdi.testehdi.domain.Broker;
 import io.github.teitss.testehdi.testehdi.domain.BrokerData;
 import io.github.teitss.testehdi.testehdi.domain.BrokerStatus;
 import io.github.teitss.testehdi.testehdi.domain.InactiveError;
+import reactor.core.publisher.Mono;
 
 @RestController
 public class BrokerStatusController {
@@ -36,6 +42,19 @@ public class BrokerStatusController {
 
         return ResponseEntity.ok(new BrokerStatus(broker,brokerData)); 
         
+    }
+
+    @PutMapping("/status/{document}")
+    Mono<BrokerData> put(@PathVariable String document, @RequestBody ActiveDTO active) {
+        
+        Broker broker = webClient.get().uri("/broker/" + document).retrieve().bodyToMono(Broker.class).block();
+        return webClient.put()
+            .uri("/brokerData/" + broker.getCode())
+            .contentType(MediaType.APPLICATION_JSON)
+            .body(Mono.just("{\"active\":" + active.getActive() + "}"), String.class)
+            .retrieve()
+            .bodyToMono(BrokerData.class);
+
     }
     
 }
