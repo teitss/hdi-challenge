@@ -10,13 +10,13 @@ Considerações: Já que estamos usando Tomcat, optei por usar códigos síncron
 
 #### Retorna os dados de um corretor.
 
-```http
+```
   GET /status/{document}
 ```
 
 #### Atualiza o status de um corretor.
 
-```http
+```
   PUT /status/{document}
 ```
 
