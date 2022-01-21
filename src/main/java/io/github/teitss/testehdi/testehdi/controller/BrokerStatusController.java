@@ -10,6 +10,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import io.github.teitss.testehdi.testehdi.domain.Broker;
 import io.github.teitss.testehdi.testehdi.domain.BrokerData;
 import io.github.teitss.testehdi.testehdi.domain.BrokerStatus;
+import io.github.teitss.testehdi.testehdi.domain.InactiveError;
 
 @RestController
 public class BrokerStatusController {
@@ -30,7 +31,7 @@ public class BrokerStatusController {
         BrokerData brokerData = webClient.get().uri("/brokerData/" + broker.getCode()).retrieve().bodyToMono(BrokerData.class).block();
 
         if (!brokerData.getActive()) {
-            return ResponseEntity.status(HttpStatus.OK).body("O corretor não está ativo.");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new InactiveError());
         }
 
         return ResponseEntity.ok(new BrokerStatus(broker,brokerData)); 
